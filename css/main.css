@@ -1,0 +1,508 @@
+html{
+		font-size: 62.5%;
+		width: 100%;
+		-webkit-font-size-adjust:none;
+}
+body{
+	font-family:  "Microsoft Yahei";
+	width: 100%;
+}
+.header{
+    width: 100%;
+    background-color:#333;
+    box-shadow: 0 1px 10px rgba(0 ,0 ,0,0.3);
+    position:fixed;
+    top:0;
+    z-index:9999;
+}
+.xs-visible{
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	position: fixed;
+	top: 23px;
+	right: 23px;
+	display: none;
+}
+.header .headerBar{
+	width: 1200px;
+	height: 73px;
+	margin:0 auto;
+}
+.headerBar .headerBarLogo{
+    float: left;
+    width: 30%;
+    height: 73px;
+}
+.headerBar .headerBarMenu{
+	float: right;
+	width:55%;
+	height: 73px;
+	line-height: 73px;
+	color: #aaa;
+}
+.headerBar .headerBarMenu li{
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+.headerBarMenu li a{
+	color: #eee;
+	font-size: 2rem;
+	font-family:  "Microsoft Yahei";
+	display: block;
+	text-decoration: none;
+}
+.headerBarMenu .active a{
+	background-color:#000;
+}
+.headerBarMenu li a:hover{
+	background: #000;
+}
+@media only screen and (max-width: 1200px){
+	.header .headerBar{
+		width: 940px;
+	}
+}
+@media only screen and (max-width: 960px){
+	.header .headerBar{
+		height: 146px;
+		width: 740px;
+	}
+    .headerBar .headerBarLogo{
+        display: block;
+        width:240px;
+        margin-left: 250px;
+    }
+	.headerBar .headerBarMenu{
+		display: block;
+		width:100%;
+		text-align: center;
+	}
+
+}
+@media only screen and (max-width: 760px){
+	.header .headerBar{
+		width: 460px;
+	}
+	.headerBar .headerBarLogo{
+		margin-left: 110px;
+	}
+	.headerBarMenu li a{
+		font-size: 1.8rem;
+	}
+}
+@media only screen and (max-width: 480px){
+	.header .headerBar{
+		width: 100%;
+        height: 121px;
+	}
+	.headerBar .headerBarLogo{
+		margin-left:0;
+	}
+    .headerBar .headerBarMenu{
+    	height: 45px;
+    	line-height: 45px;
+		display: none;
+	}
+	.headerBar .headerBarMenu li{
+		width: 25%;
+	}
+	.headerBar .xs-visible{
+		display: block;
+	}
+	.headerBar .xs-hidden{
+		display: none;
+	}
+}
+
+/*广告部分*/
+.ad{
+	padding:73px 0 0 0;
+	width: 100%;
+	position: relative;
+	height: 600px;
+	overflow: hidden;
+}
+.ad ul{
+	position: absolute;
+	left: -100%;
+	width: 500%;
+	margin: 0;
+}
+.ad ul li{
+	float: left;
+	width:20%;
+	height: 600px;
+}
+.ad ul li img{
+	width:100%;
+	height: 100%;
+}
+ .ad .adCenter{
+	position: absolute;
+    width: 40%;
+    height: 60px;
+    top:50%;
+    left:50%;
+    margin:-10px 0 0 -20%; 
+    background: #000;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+}
+.ad .copy{
+	background: transparent;
+	padding:3px 3px 0 3px;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.ad .search{
+	float: left;
+	display: block;
+	width: 70%;
+	height: 52px;
+	background: #eee;
+	border:1px solid #666;
+	color: #666;
+	border-radius: 10px;
+	font-size: 2.4rem;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.ad .button{
+	width: 30%;
+	height: 54px;
+	background: #eee;
+	color: #666;
+	border:1px solid #333;
+	border-left-width: 3px;
+	border-radius: 12px;
+	font-size: 2.4rem;
+	font-weight: bold;
+	float: right;
+	padding:0 10px;
+	box-sizing: border-box;
+}
+.ad .btn{
+	position: absolute;
+	display: block;
+	width: 36px;
+	height: 45px;
+	top:50%;
+}
+.ad #pre{
+	left: 0px;
+	background: url(../images/pre.png) no-repeat;
+	background-size: contain;
+}
+.ad #next{
+	right: 0px;
+	background: url(../images/next.png) no-repeat;
+	background-size: contain;
+}
+.carouselButton{
+	width: 80px;
+	position: absolute;
+	bottom:20px;
+	left: 50%;
+	margin-left: -40px;
+}
+.carouselBtn{
+	display: block;
+	zoom:1;
+	width: 10px;
+	height: 10px;
+	margin:5px;
+	background: #fff;
+	border-radius: 100%;
+	float: left;
+	cursor: pointer;
+}
+.carouselActive{
+	background-color: #E654EB;
+}
+@media only screen and (max-width: 1200px){
+	.ad{
+		height: 500px;
+	}
+	.ad ul li img{
+		height: 500px;
+	}
+}
+@media only screen and (max-width: 960px){
+	.ad{
+		padding-top: 146px;
+		height: 400px;
+	}
+	.ad .adCenter{
+		top:60%;
+	}
+	.ad .copy{
+		top: 60%;
+	}
+	.ad .btn{
+		top:58%;
+	}
+	.ad ul li img{
+		height: 400px;
+	}
+	.ad .search,.ad .button{
+		font-size: 1.8rem;
+		height: 45px;
+	}
+	.ad .adCenter{
+		height: 50px;
+	}
+}
+
+@media only screen and (max-width: 760px){
+	.ad{
+		height: 300px;
+	}
+	.ad ul li img{
+		height: 300px;
+	}
+	.ad .adCenter{
+		width: 70%;
+		height: 53px;
+		margin: -10px 0 0 -35%;
+	}
+	.ad .search,.ad .button{
+		font-size: 1.9rem;
+		height: 45px;
+	}
+}
+@media only screen and (max-width: 480px){
+	.ad{
+		padding-top: 121px;
+	}
+	.ad{
+		height: 200px;
+	}
+	.ad ul li img{
+		height: 200px;
+	}
+	.ad .adCenter{
+		width: 80%;
+		height: 48px;
+		margin: -10px 0 0 -40%;
+	}
+	.ad .search,.ad .button{
+		font-size: 1.6rem;
+		height: 40px;
+	}
+	.ad .btn{
+		display: none;
+	}
+}
+/*旅游景点介绍*/
+.tour{
+	width: 100%;
+	margin:30px auto;
+}
+.tour .tourHeaderWrap{
+	width: 100%;
+}
+.tour  .tourHead{
+	width: 1200px;
+	margin:0 auto;
+	text-align: center;
+}
+.tour .tourHead h2{
+    margin:10px;
+    font-size: 4.5rem;
+    letter-spacing: 0.2rem;
+    color: #666;
+    font-weight: bold;
+    font-family:  "Microsoft Yahei";
+}
+.tour .tourHead p{
+	color: #666;
+	margin:10px;
+	font-size: 2rem;
+	font-family:  "Microsoft Yahei";
+}
+.tour .tourInfo{
+	width: 1200px;
+	margin:0 auto;
+}
+.tour .tourInfo .tourInfoList{
+	box-sizing: border-box;
+	border:1px solid #ddd;
+	float: left;
+	padding:4px;
+	border-radius: 4px;
+	width: 32.4%;
+	text-align: left;
+	position: relative;
+	margin:15px 0.4%;
+	font-family:  "Microsoft Yahei";
+
+}
+.tour .tourInfo .tourInfoList img{
+	vertical-align: middle;
+	width: 100%;
+}
+ .tourInfoList p{
+	color: #777;
+	line-height: 1.5;
+	letter-spacing: 1px;
+	padding:7px 0 5px 0;
+	font-size: 14px;
+	
+}
+.tourInfoList .title{
+	height: 40px;
+	overflow: hidden;
+
+}
+.tourInfoList .info .sat{
+	float: right;
+	font-size: 1.4rem;
+	color: #999;
+	font-style: normal;
+	position: relative;
+	top: 5px;
+	right: 5px;
+}
+.tourInfoList .info .money{
+	color: #f60;
+	font-size: 1.4rem;
+}
+.info .money strong{
+	font-size: 2rem;
+	letter-spacing: 1px;
+}
+.tourInfoList  .fixTxt{
+    width:90px;
+    height:25px;
+    font-size:14px;
+    line-height:25px;
+    text-align:center;
+    color:#eeeeee;
+    background-color:#59b200;
+    letter-spacing:2px;
+    position:absolute;
+    top:4px;
+    left:4px;
+}
+@media only screen and (max-width: 1200px){
+	.tour .tourHead{
+		width:960px;
+	}
+	.tour .tourInfo{
+		width: 960px;
+	}
+}
+@media only screen and (max-width: 960px){
+	.tour .tourHead{
+		width: 760px;
+	}
+    .tour .tourInfo{
+    	width: 760px;
+    }
+    .tour .tourInfo .tourInfoList{
+    	width: 48.8%;
+    	margin:15px 0.6%;
+    }
+}
+@media only screen and (max-width: 760px){
+	.tour .tourHead,.tour .tourInfo{
+		width: 480px;
+	}
+	.tour .tourInfo .tourInfoList{
+		width: 100%;
+		margin: 15px 0;
+	}
+}
+@media only screen and (max-width: 480px){
+    .tour .tourHead p{
+    	display: none;
+    }
+    .tour .tourInfo{
+    	width:100%;
+    }
+}
+/*底部部分*/
+.footer{
+	width: 100%;
+	background: #222;
+}
+.footerA{
+	max-width: 1263px;
+	height: 280px;
+	margin:0 auto;
+	text-align: center;
+}
+.footerAcontent{
+	width: 100%;
+	
+}
+.footerAcontent .block{
+	width: 33.33%;
+	height: 280px;
+	text-align: left;
+	color: #ccc;
+	vertical-align: top;
+	float: left;
+}
+
+.footerAcontent dt{
+	font-size: 3rem;
+	padding:20px 0 10px 20px;
+}
+.footerAcontent .underLine{
+	border-bottom: 1px dashed #666;
+	display: block;
+	width: 85%;
+	margin-left: 20px;
+}
+.footerAcontent dd{
+	font-size:2rem;
+	color: #777;
+	text-indent: 20px;
+	line-height: 2;
+}
+.footer .version{
+	color: #777;
+	text-align: center;
+	padding:10px 0;
+	font-size: 1.8rem;
+}
+.sm-visible{
+	display: none;
+}
+.footerB{
+	padding:1.5rem;
+	color: #777;
+	text-align: center;
+	font-size:1.8rem;
+	background: #000;
+	border-top:1px solid #444;
+}
+@media only screen and (max-width: 960px){
+    .footerAcontent dd{
+    	font-size:1.8rem;
+    }
+}
+@media only screen and (max-width: 760px){
+	.footerA{
+		display: none;
+		overflow: hidden;
+	}
+	.sm-visible{
+		display: block;
+	}
+	.footerB{
+		display: none;
+	}
+}
+@media only screen and (max-width: 480px){
+	.footerA{
+		display: none;
+		overflow: hidden;
+	}
+	.sm-visible{
+		display: block;
+	}
+}
