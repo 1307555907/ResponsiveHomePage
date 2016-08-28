@@ -81,9 +81,15 @@
 
         },
         showMenu:function(){
-            $('.headerBar .xs-visible').click(function(){
-                $('.headerBar .headerBarMenu').toggle();
-            });
+            $(window).resize(function(){
+                if($(window).width() < 480){
+                    $('.headerBar .xs-visible').click(function(){
+                        $('.headerBar .headerBarMenu').toggle();
+                    });
+                }else{
+                    $('.headerBar .headerBarMenu').show();
+                }
+            })
         }
     }
 	var util = new Util();
