@@ -112,7 +112,6 @@
             var t_start;
             return function(){
                 var context = this,args = arguments,t_curr = new Date();
-                console.log(context);
                 if(!t_start){
                     t_start = t_curr;
                 }if(t_curr - t_start >= mustRunDelay){
