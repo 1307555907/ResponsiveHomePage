@@ -73,15 +73,31 @@
             $(".ad").mouseenter(end);
             $(".ad").mouseleave(start);
 
-            $(window).resize(function(){
-                $liLength = $li.width();
-                $ulLength = $ul.width();
-                $ul.css("left",-index*$liLength+"px");
-            });
+            // $(window).resize(function(){
+            //     $liLength = $li.width();
+            //     $ulLength = $ul.width();
+            //     $ul.css("left",-index*$liLength+"px");
+            // });
+            $(window).resize(this.throttle(function(){
+                 $liLength = $li.width();
+                 $ulLength = $ul.width();
+                 $ul.css("left",-index*$liLength+"px");
+             },50,100));
 
         },
         showMenu:function(){
-            $(window).resize(function(){
+
+            // $(window).resize(function(){
+            //     if($(window).width() < 480){
+            //         $('.headerBar .xs-visible').click(function(){
+            //             $('.headerBar .headerBarMenu').toggle();
+            //         });
+            //     }else{
+            //         $('.headerBar .headerBarMenu').show();
+            //     }
+            //     console.log(1);
+            // })
+            $(window).resize(this.throttle(function(){
                 if($(window).width() < 480){
                     $('.headerBar .xs-visible').click(function(){
                         $('.headerBar .headerBarMenu').toggle();
@@ -89,7 +105,24 @@
                 }else{
                     $('.headerBar .headerBarMenu').show();
                 }
-            })
+            },50,100));
+        },
+        throttle:function(fn,delay,mustRunDelay){
+            var timer = null;
+            var t_start;
+            return function(){
+                var context = this,args = arguments,t_curr = new Date();
+                console.log(context);
+                if(!t_start){
+                    t_start = t_curr;
+                }if(t_curr - t_start >= mustRunDelay){
+                    fn.apply(context,args);
+                }else{
+                    timer = setTimeout(function(){
+                        fn.apply(context,args);
+                    },delay);
+                }
+            }
         }
     }
 	var util = new Util();
