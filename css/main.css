@@ -416,11 +416,14 @@ body{
 	}
 }
 @media only screen and (max-width: 480px){
+	.tour .tourHead,.tour .tourInfo{
+		width:100%;
+	}
+	.tour .tourHead{
+		text-align: center;
+	}
     .tour .tourHead p{
     	display: none;
-    }
-    .tour .tourInfo{
-    	width:100%;
     }
 }
 /*底部部分*/
